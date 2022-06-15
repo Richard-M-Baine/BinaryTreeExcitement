@@ -119,7 +119,15 @@ function countNodes(rootNode) {
 }
 
 function balancedTree(rootNode) {
-  // Your code here
+  let left = 0
+  let right = 0
+  if (rootNode.left){
+   left = getHeight(rootNode.left)}
+  if (rootNode.right){
+    right = getHeight(rootNode.right)
+  }
+if (Math.abs(left - right) <= 1){return true}
+return false
 }
 
 function getParentNode(rootNode, target) {
