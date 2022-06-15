@@ -14,11 +14,26 @@ function findMinBST (rootNode) {
 }
 
 function findMaxBST (rootNode) {
-  // Your code here
+  if (!rootNode.right){return rootNode.val}
+  let current = rootNode
+  while(current){
+    if (!current.right){return current.val}
+    current = current.right
+  }
 }
 
+
 function findMinBT (rootNode) {
-  // Your code here
+  let count = Infinity
+  let queue = [rootNode]
+  while(queue.length){
+    let node = queue.pop()
+    if (count > node.val){count = node.val}
+    if (node.left)queue.unshift(node.left)
+    if (node.right)queue.unshift(node.right)
+  }
+  return count
+
 }
 
 function findMaxBT (rootNode) {
